@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Demo</title>
+		<title>Icelandic Concerts</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta name="description" content="Demo project">
@@ -10,18 +10,33 @@
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 		<style type="text/css"></style>
 	</head>
-	<body ng-app="app">
+	<body style="background:black" ng-app="app">
 		<div class="container" ng-controller="MyCtrl">
 			<ul class="nav nav-pills">
-			  <li role="presentation" class="active"><a class="nav-option" href="#">Home</a></li>
-			  <li role="presentation"><a class="nav-option" href="#">Profile</a></li>
-			  <li role="presentation"><a class="nav-option" href="#">Messages</a></li>
+			  <li role="presentation" class="active"><a class="nav-option" href="#">Concerts</a></li>
+			  <li role="presentation"><a class="nav-option" href="#">Tickets</a></li>
+			  <li role="presentation"><a class="nav-option" href="#">Contact Us</a></li>
 			</ul>
-			<ul>
-				<li ng-repeat="earthquake in earthquakes">
-					<h4>{{earthquake.timestamp}}</h4>
-				</li>
-			</ul>
+			<br>
+			<!-- <button type="submit" ng-click='getConcert()'>Submit</button> -->
+			<div class='well' style="background: #ACB4AC" ng-repeat="concert in concerts">
+    			<ul class="list-group">
+    			<li class="list-group-item" style="background: #EBF7EB">
+    			
+    			<!-- Pulling all the data from concert data results -->
+    			<div>{{ concert.eventDateName }}</div>
+    			<div>{{ concert.dateOfShow }}</div>
+    			<div>{{ concert.eventHallName }}</div>
+    			<div>{{ concert.name }}</div>
+    			<div>{{ concert.userGroupName }}</div>
+    			<img src="{{ concert.imageSource }}">
+
+    			</li>
+    			</ul>
+  			</div>
+			
+
+
 		</div>
 	</body>
 	<script type="text/javascript" src="app.js"></script>
